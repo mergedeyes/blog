@@ -1,0 +1,21 @@
+# Jekyll config — GitHub Pages builds this itself, no local tooling needed.
+title: "~/log"
+description: "Jan's log: systems, homelab, things that broke and how they got fixed."
+url: "https://blog.mergedcloud.de"
+baseurl: ""
+lang: en
+timezone: Europe/Berlin
+author:
+  name: Jan
+  url: "https://mergedcloud.de/"
+# IndieWeb identity lives on the main domain; webmention.io account = that domain.
+identity: "https://mergedcloud.de/"
+webmention_domain: "mergedcloud.de"
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+feed:
+  path: feed.xml
+exclude:
+  - README.md

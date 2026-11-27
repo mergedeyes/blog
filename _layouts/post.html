@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article class="h-entry">
+  <p class="path">~/log/{{ page.date | date: "%Y/%m/%d" }}</p>
+  <h1 class="p-name">{{ page.title | escape }}</h1>
+  <p class="meta">
+    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %b %Y" }}</time>
+    · <a class="p-author h-card" href="{{ site.identity }}">{{ site.author.name }}</a>
+    · <a class="u-url" href="{{ page.url | absolute_url }}">permalink</a>
+  </p>
+  {% if page.summary %}<p class="p-summary lead">{{ page.summary | escape }}</p>{% endif %}
+
+  <div class="e-content">
+{{ content }}
+  </div>
+
+  {% if page.syndication %}
+  <p class="meta">Also posted on:
+    {% for s in page.syndication %}<a class="u-syndication" href="{{ s.url }}">{{ s.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+  </p>
+  {% endif %}
+</article>
+
+<section class="mentions" id="mentions" data-target="{{ page.url | absolute_url }}" data-api="https://webmention.io/api/mentions.jf2" hidden>
+  <h2 class="mentions__title">Mentions</h2>
+  <p class="mentions__counts"></p>
+  <ul class="mentions__list"></ul>
+</section>
+
+<form class="send" action="https://webmention.io/{{ site.webmention_domain }}/webmention" method="post">
+  <label for="wm-source">Wrote a reply on your own site? Send its URL:</label>
+  <div class="send__row">
+    <input id="wm-source" type="url" name="source" placeholder="https://your.site/your-reply" required />
+    <input type="hidden" name="target" value="{{ page.url | absolute_url }}" />
+    <button type="submit">Send webmention</button>
+  </div>
+</form>
+
+<script src="{{ '/assets/webmentions.js' | relative_url }}" defer></script>

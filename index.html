@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section class="h-feed">
+  <p class="path">~/log</p>
+  <h1 class="p-name">Log</h1>
+  <p class="lead">{{ site.description | escape }}</p>
+  <a class="p-author h-card" href="{{ site.identity }}" hidden>{{ site.author.name }}</a>
+
+  {% if site.posts.size > 0 %}
+  <ul class="posts">
+    {% for post in site.posts %}
+    <li class="h-entry">
+      <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <a class="u-url p-name" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      {% if post.summary %}<p class="p-summary">{{ post.summary | escape }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">Nothing here yet. Which is also a kind of uptime.</p>
+  {% endif %}
+</section>
