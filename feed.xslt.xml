@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Makes /feed.xml readable in a browser. Feed readers ignore this and read the Atom XML. -->
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  exclude-result-prefixes="atom">
+  <xsl:output method="html" encoding="utf-8" indent="yes" doctype-system="about:legacy-compat"/>
+
+  <xsl:template match="/atom:feed">
+    <html lang="en">
+      <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title><xsl:value-of select="atom:title"/> · feed</title>
+        <link rel="stylesheet" href="/assets/style.css"/>
+      </head>
+      <body>
+        <div class="wrap">
+          <header class="top">
+            <a class="brand" href="/">~/log</a>
+            <nav class="top__nav" aria-label="Site">
+              <a href="https://mergedcloud.de/">mergedcloud.de</a>
+              <a href="/">posts</a>
+            </nav>
+          </header>
+          <main id="main">
+            <p class="path">~/log/feed.xml</p>
+            <h1>This is a feed</h1>
+            <p class="lead">
+              Copy this address into a feed reader (Feedly, NetNewsWire, Thunderbird, …)
+              to get new posts automatically:
+            </p>
+            <pre><code><xsl:value-of select="atom:link[@rel='self']/@href"/></code></pre>
+            <h2>Latest posts</h2>
+            <ul class="posts">
+              <xsl:for-each select="atom:entry">
+                <li>
+                  <time><xsl:value-of select="substring(atom:published, 1, 10)"/></time>
+                  <a href="{atom:link[@rel='alternate']/@href}"><xsl:value-of select="atom:title"/></a>
+                  <xsl:if test="atom:summary">
+                    <p class="p-summary"><xsl:value-of select="atom:summary"/></p>
+                  </xsl:if>
+                </li>
+              </xsl:for-each>
+            </ul>
+          </main>
+        </div>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

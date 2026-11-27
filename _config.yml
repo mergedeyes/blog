@@ -17,5 +17,7 @@ plugins:
   - jekyll-feed
 feed:
   path: feed.xml
+  # adds <?xml-stylesheet?> pointing at /feed.xslt.xml, so browsers show a readable page
+  xsl: true
 exclude:
   - README.md
