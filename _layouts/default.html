@@ -35,6 +35,15 @@
         Written by <a class="p-name u-url" rel="author" href="{{ site.identity }}">{{ site.author.name }}</a>.
         Replies welcome via <a href="https://indieweb.org/Webmention">webmention</a>.
       </p>
+      <!-- IndieWeb Webring: the ring knows this site as mergedcloud.de and picks
+           neighbours by Referer, so the arrows go through bounce pages on the main
+           domain (mergedcloud.de/webring/*.html) instead of straight to 🕸💍.ws -
+           linking directly from this subdomain would land on a random member. -->
+      <p class="webring">
+        <a href="https://mergedcloud.de/webring/previous.html" aria-label="Previous site in the IndieWeb Webring">←</a>
+        An <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍
+        <a href="https://mergedcloud.de/webring/next.html" aria-label="Next site in the IndieWeb Webring">→</a>
+      </p>
     </footer>
   </div>
 </body>
