@@ -27,4 +27,4 @@ Also going to therapy, because this world sucks and I don't like being not happy
 
 If you wanna reach out, have some advice, want to colaborate or anything else, you find my Github profile and email on my [homepage](https://mergedcloude.de/).
 
-Until then, have fun poking around, please don't break anything - Claude has to repear it (poor thing).
+Until then, have fun poking around, please don't break anything - Claude has to repair it (poor thing).
