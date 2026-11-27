@@ -70,6 +70,8 @@ pre code { background: none; border: 0; padding: 0; }
 .posts .p-summary { color: var(--text-dim); margin: .2rem 0 0; }
 .empty { color: var(--muted); font-family: var(--font-mono); }
 
+.now__about { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+
 .mentions { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 .mentions__title { margin-top: 0; }
 .mentions__counts { color: var(--text-dim); font-family: var(--font-mono); font-size: .9rem; margin: 0 0 1rem; }

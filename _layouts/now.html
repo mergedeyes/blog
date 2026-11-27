@@ -1,0 +1,28 @@
+---
+layout: default
+---
+{%- comment -%}
+  /now page (https://nownownow.com/about): what I'm focused on at the moment.
+  Overwritten in place instead of posted, so no date in the URL and not in the feed.
+  `updated:` in the front matter is the date shown; Mainframe's L sets it to the
+  day it pushes a change.
+{%- endcomment -%}
+<article class="h-entry">
+  <p class="path">~/now</p>
+  <h1 class="p-name">{{ page.title | escape }}</h1>
+  <p class="meta">
+    Updated <time class="dt-updated" datetime="{{ page.updated | date: '%Y-%m-%d' }}">{{ page.updated | date: "%-d %b %Y" }}</time>
+    · <a class="p-author h-card" href="{{ site.identity }}">{{ site.author.name }}</a>
+    · <a class="u-url" href="{{ page.url | absolute_url }}">permalink</a>
+  </p>
+  {% if page.description %}<p class="p-summary lead">{{ page.description | escape }}</p>{% endif %}
+
+  <div class="e-content">
+{{ content }}
+  </div>
+
+  <p class="meta now__about">
+    This is a <a href="https://nownownow.com/about">/now page</a>: what I'm up to at the moment,
+    rewritten whenever that changes.
+  </p>
+</article>

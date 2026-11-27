@@ -22,6 +22,13 @@ Push, wait about a minute, done. The feed (`/feed.xml`) updates itself.
 Optional front matter: `syndication:` with a list of `{name, url}` for copies elsewhere
 (e.g. a Mastodon post), shown as `u-syndication` links.
 
+## The /now page
+
+`now.md` is the [/now page](https://nownownow.com/about) at `/now/`: what I'm up to at the
+moment, rewritten in place (not a post, not in the feed). Its `updated:` front matter is
+the date shown. Mainframe's `L` lists it on top, and pushing it from there (`P` / `^G`)
+sets `updated:` to that day.
+
 ## IndieWeb pieces
 
 - Posts are `h-entry` (title, date, author, content), the post list is an `h-feed`.
