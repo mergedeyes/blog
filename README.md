@@ -11,7 +11,7 @@ Add `_posts/YYYY-MM-DD-some-slug.md`:
 ---
 layout: post
 title: "Title"
-summary: "One line for the post list and link previews (optional)."
+description: "One line for the post list, the feed and link previews (optional)."
 ---
 
 Text in Markdown.

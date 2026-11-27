@@ -13,7 +13,7 @@ layout: default
     <li class="h-entry">
       <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
       <a class="u-url p-name" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      {% if post.summary %}<p class="p-summary">{{ post.summary | escape }}</p>{% endif %}
+      {% if post.description %}<p class="p-summary">{{ post.description | escape }}</p>{% endif %}
     </li>
     {% endfor %}
   </ul>

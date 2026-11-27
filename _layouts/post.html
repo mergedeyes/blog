@@ -9,7 +9,7 @@ layout: default
     · <a class="p-author h-card" href="{{ site.identity }}">{{ site.author.name }}</a>
     · <a class="u-url" href="{{ page.url | absolute_url }}">permalink</a>
   </p>
-  {% if page.summary %}<p class="p-summary lead">{{ page.summary | escape }}</p>{% endif %}
+  {% if page.description %}<p class="p-summary lead">{{ page.description | escape }}</p>{% endif %}
 
   <div class="e-content">
 {{ content }}
